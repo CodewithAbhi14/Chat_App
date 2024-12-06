@@ -33,10 +33,11 @@ export const signup = async (req, res)=>{
             await newUser.save();
 
             res.status(201).json({message:"User Created...",
-                ID: newUser._id,
-                Full_Name: newUser.fullName,
-                Email: newUser.email,
-                Profile_Pic: newUser.profilePic,
+                _id: newUser._id,
+                fullName: newUser.fullName,
+                email: newUser.email,
+                profilePic: newUser.profilePic,
+                createdAt: newUser.createdAt,
             })
         }
         else{
@@ -71,9 +72,10 @@ export const login = async (req, res)=>{
 
             res.status(201).json({message:"User Logedin...",
                 _id: user._id,
-                Full_Name: user.fullName,
-                Email: user.email,
-                Profile_Pic: user.profilePic,
+                fullName: user.fullName,
+                email: user.email,
+                profilePic: user.profilePic,
+                createdAt: newUser.createdAt,
             })
 
     } catch (error) {
